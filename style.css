@@ -114,4 +114,7 @@ video.content-media--left {
         margin-bottom: 2vh;
         /* width:auto; */
     }
+    .kits_item-content p{
+        width: 45vw;
+    }
 }

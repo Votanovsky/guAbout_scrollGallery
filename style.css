@@ -39,7 +39,7 @@ h1, h2, h3 {
     /* width: min-content; - автоматизирует текст по ширине первого слова тут не нужно но оч крутое свойство */
 }
 h3 {
-    width: min-content;
+    /* width: min-content; */
 }
 .kits_wrapper {
     width: 100%;
@@ -112,6 +112,6 @@ video.content-media--left {
     .kits_item-content h3{
         font-size: calc(var(--index) * 2);
         margin-bottom: 2vh;
-        width:auto;
+        /* width:auto; */
     }
 }

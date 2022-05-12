@@ -9,7 +9,7 @@
     --gutter: 30px;
     --side-small: 26;
     --side-big: 36;
-    --depth: 4000px;
+    --depth: 4500px;
     --transition: .75s cubic-bezier(.075, .5, 0, 1);
 
 }
@@ -37,6 +37,9 @@ h1, h2, h3 {
     font-weight: 300;
     text-transform: uppercase;
     /* width: min-content; - автоматизирует текст по ширине первого слова тут не нужно но оч крутое свойство */
+}
+h3 {
+    width: min-content;
 }
 .kits_wrapper {
     width: 100%;
@@ -100,7 +103,7 @@ video.content-media--left {
 }
 .kits_item-content h3{
     font-size: calc(var(--index) * 3);
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
 }
 .kits_item-content p{
     width: 40vw;

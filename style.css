@@ -108,3 +108,10 @@ video.content-media--left {
 .kits_item-content p{
     width: 40vw;
 }
+@media (max-width: 768px) {
+    .kits_item-content h3{
+        font-size: calc(var(--index) * 2);
+        margin-bottom: 2vh;
+        width:auto;
+    }
+}

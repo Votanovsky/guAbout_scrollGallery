@@ -23,19 +23,23 @@
     src: url("/fonts/Jost-300-Light.otf");
     font-weight: 300;
 }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap');
 body {
-    font-family: "Jost";
-    background: #000;
+    font-family: "Inter", sans-serif;
+    background: #F8F8F8;
     color: #fff;
-    font-size: calc(var(--index));
-    line-height: 1.75;
+    font-size: calc(var(--index)*0.8);
+    line-height: 1.3;
     height: var(--depth);
     font-weight: 300;
+    color: #1C1A1A;
 }
 h1, h2, h3 {
     font-family: "Monterchi";
     font-weight: 300;
     text-transform: uppercase;
+    mix-blend-mode: difference;
+    
     /* width: min-content; - автоматизирует текст по ширине первого слова тут не нужно но оч крутое свойство */
 }
 h3 {
@@ -64,7 +68,12 @@ h3 {
 }
 .kits_item-content .content-title {
     text-align: center;
-    font-size: calc(var(--index)*3.3);
+    font-size: calc(var(--index)*6.5);
+    letter-spacing: -0.05em;
+    /* background-color: #C12A29;
+    background-image: linear-gradient(169.46deg, #C12A29 13.75%, #DF5530 81.68%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
 }
 .kits_item-content .content-media {
     position: relative;
@@ -73,15 +82,30 @@ h3 {
     background-position: center;
     background-size: center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-media img {
+    border-bottom: 1px solid #000;
+    padding-bottom: 1vw;
+    object-fit: cover;
+}
+.content-media source {
+    padding-bottom: 1vw;
+    border-bottom: 1px solid #000;
 }
 .kits_item-content .content-media--left {
-    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+    right: calc(var(--side-small) / 2.4 * var(--index) + var(--gutter));
 }
 .kits_item-content .content-media--right {
-    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+    left: calc(var(--side-small) / 2.4 * var(--index) + var(--gutter));
 }
 .kits_item--bg {
-    background-color: rgba(0,0,0,.85);
+    background-color: rgba(248,248,248,.85);
+}
+.kits_item--bg-light {
+    background-color: rgba(248,248,248,.35);
 }
 video.content-media {
     width: calc( var(--index)*var(--side-big) );
@@ -103,18 +127,78 @@ video.content-media--left {
 }
 .kits_item-content h3{
     font-size: calc(var(--index) * 3);
-    margin-bottom: 2vh;
+    /* margin-bottom: ; */
 }
 .kits_item-content p{
-    width: 40vw;
+    width: 35vw;
 }
 @media (max-width: 768px) {
     .kits_item-content h3{
         font-size: calc(var(--index) * 2);
-        margin-bottom: 2vh;
+        /* margin-bottom: 1vh; */
         /* width:auto; */
     }
     .kits_item-content p{
         width: 45vw;
     }
+}
+
+
+
+.go_scroll {
+    position: fixed;
+    left: 50%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%);
+    bottom: 1vw;
+    /* background: #000; */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: .6;
+}
+
+.mouse {
+	width: 30px;
+	height: 54px;
+	border: 2px solid #333;
+	border-radius: 60px;
+	position: relative;
+	
+}
+.mouse::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+    -webkit-animation: wheel 2s infinite;
+}
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 40px;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 40px;
+	}
+}
+.text {
+    font-size: 14px;
+    /* width: 230px; */
+    text-align: center;
+    margin-top: 12px;
+    line-height: 98%;
 }
